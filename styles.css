@@ -1,0 +1,123 @@
+.searchinput{
+	margin-left:30px;
+	display:flex;
+	font-family:Manjari;
+	font-size:14px;
+	flex:1;
+	box-shadow:0px 0px 5px lightgray;
+	border-radius:10px;
+	height:35px;
+	background-color:#e2e1e1;
+	border-width:0px;
+	align-items:center;
+	margin-right:10px;
+}
+div input{
+	background-color:transparent;
+	border-width:0px;
+	flex:1;
+	align-self:center;
+	margin-left:10px;
+	margin-right:10px
+}
+header {
+	background:white;
+	margin-top:0;
+	position:sticky;
+	align-items:center;
+	padding:10px;
+}
+::placeholder{
+	color:gray;
+	font-weight:bolder;
+	font-family:Manjari;
+}
+.logo{
+	display:flex;
+	font-family:Manjari;
+	font-size:30px;
+	font-weight:bolder;
+	align-self:center;
+	margin-left:10px;
+}
+body{
+	margin:0;
+	background-image:white;
+	background-repeat:no-reapeat;
+	background-attachment:fixed;
+}
+.contentcontainer{
+	display:flex;
+	flex-wrap:wrap;
+	gap:20px;
+	clear:both;
+	width:100%;
+	box-sizing: border-box;
+	position: relative;
+	padding:15px;
+}
+.meaningrect{
+	box-shadow:0px 0px 5px gray;
+	align-self:flex-start;
+	padding:20px;
+	flex:1;
+	min-width:400px;
+	flex-direction:row;
+	display:block;
+	overflow:auto;
+	border-radius:20px;
+	background-image:linear-gradient(to bottom right, #8a66fb, #5b86e5);
+}
+.englishword{
+	font-size:28px;
+	color:lightgray;
+	font-weight:bolder;
+	font-family:Manjari;
+	margin:50px 0px 0px 0px;
+}
+.meaning{
+	font-size:44px;
+	color:white;
+	margin-top:20px;
+	font-weight:bolder;
+	font-family:Manjari;
+	margin:0;
+}
+.description{
+	font-size:14px;
+	color:white;
+	font-family:Manjari;
+	overflow-wrap:break-word;
+	text-align:justify;
+	overflow-x:hidden;
+	overflow-y:scroll;
+	margin:0;
+	position:relative;
+	scrollbar-width:thin;
+	scrollbar-color:transparent transparent;
+}
+#contentrectangle{
+	display:block;
+	overflow:auto;
+}
+#alltranslations{
+	min-width:400px;
+	height:80vh;
+	background:blue;
+	flex:2;
+}
+
+@media (max-width:800px){
+	.meaningrect{
+		min-width:0;
+	}
+	.contentcontainer{
+		flex-direction:column;
+	}
+}
+::-webkit-scrollbar {
+	width:5px;
+}
+::-webkit-scrollbar-track {
+	background:transparent;
+}
