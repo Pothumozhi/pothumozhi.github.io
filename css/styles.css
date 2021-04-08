@@ -46,7 +46,6 @@ div input{
 	display:flex;
 	padding:10px;
 	overflow:auto;
-	height:100%;
 	gap:20px;
 	margin:0;
 	flex:1 1 auto;
@@ -69,7 +68,7 @@ body{
 	align-self:flex-start;
 	padding:20px;
 	flex:1;
-	min-width:400px;
+	min-width:250px;
 	display:block;
 	overflow:auto;
 	border-radius:20px;
@@ -99,18 +98,19 @@ body{
 	overflow-x:hidden;
 	overflow-y:scroll;
 	margin:0;
+	height:100px;
 	position:relative;
 	scrollbar-width:thin;
 	scrollbar-color:transparent transparent;
 }
 #alltranslations{
 	flex:2;
-	flex-basis:200px;
+	flex-basis:400px;
 	background:blue;
 	align-self:strech;
 }
 
-@media (max-width:800px){
+@media (max-width:500px){
 	.contentcontainer{
 		flex-direction:column;
 	}
@@ -119,8 +119,15 @@ body{
 		align-self:flex-start;
 		min-height:200px;
 	}
+	#alltranslations{
+		align-self:initial;
+		height:100vh;
+	}
+	body{
+		display:initial;
+	}
 }
-@media (max-width:500px){
+@media (max-width:400px){
 	header{
 		flex-direction:column;
 	}
