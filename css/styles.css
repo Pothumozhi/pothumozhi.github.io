@@ -126,6 +126,9 @@ body{
 	body{
 		display:initial;
 	}
+	.description{
+		height:initial;
+	}
 }
 @media (max-width:400px){
 	header{
