@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
 header{
 	background:white;
 	margin-top:0;
 	align-items:center;
 	padding:10px;
+	flex:0 1 auto;
 }
 .logo{
 	display:flex;
@@ -45,11 +45,22 @@ div input{
 	display:flex;
 	padding:20px;
 	overflow:auto;
+	height:100%;
 	gap:20px;
+	margin:0;
+	flex:1 1 auto;
+	height:100vh - 50px;
+	align-self:strech;
+}
+html, body{
+	margin:0;
+	height:100%;
+	width:100%;
+	font-family:Manjari;
 }
 body{
-	margin:0;
-	font-family:Manjari;
+	display:flex;
+	flex-flow:column;
 }
 
 .meaningrect{
@@ -95,7 +106,7 @@ body{
 	flex:2;
 	flex-basis:200px;
 	background:blue;
-	height:100vh;
+	align-self:strech;
 }
 
 @media (max-width:800px){
@@ -104,11 +115,12 @@ body{
 	}
 	.meaningrect{
 		min-width:0;
+		align-self:flex-start;
+		min-height:200px;
 	}
 }
-::-webkit-scrollbar {
-	width:5px;
-}
-::-webkit-scrollbar-track {
-	background:transparent;
+@media (max-width:400px){
+	.logo{
+		flex-direction:column;
+	}
 }
