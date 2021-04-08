@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
 header{
+	display:flex;
 	background:white;
+	flex-direction:row;
 	margin-top:0;
 	align-items:center;
 	padding:10px;
@@ -116,5 +118,10 @@ body{
 		min-width:0;
 		align-self:flex-start;
 		min-height:200px;
+	}
+}
+@media (max-width:500px){
+	header{
+		flex-direction:column;
 	}
 }
