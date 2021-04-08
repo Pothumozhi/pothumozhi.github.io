@@ -105,12 +105,15 @@ body{
 }
 #alltranslations{
 	flex:2;
-	flex-basis:400px;
-	background:blue;
+	flex-basis:200px;
 	align-self:strech;
+	background:blue;
+	color:transparent;
+	border-color:blue;
+	border-width:2px;
 }
 
-@media (max-width:500px){
+@media (max-width:600px){
 	.contentcontainer{
 		flex-direction:column;
 	}
@@ -130,8 +133,11 @@ body{
 		height:initial;
 	}
 }
-@media (max-width:400px){
+@media (max-width:500px){
 	header{
 		flex-direction:column;
+	}
+	.searchinput{
+		align-self:strech;
 	}
 }
