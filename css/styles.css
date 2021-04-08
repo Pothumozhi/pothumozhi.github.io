@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
 header{
+	display:flex;
 	background:white;
 	margin-top:0;
 	align-items:center;
@@ -7,11 +8,9 @@ header{
 	flex:0 1 auto;
 }
 .logo{
-	display:flex;
 	font-size:30px;
 	font-weight:bolder;
 	text-align:center;
-	align-items:center;
 	margin-left:10px;
 }
 .searchinput{
@@ -44,7 +43,7 @@ div input{
 }
 .contentcontainer{
 	display:flex;
-	padding:20px;
+	padding:10px;
 	overflow:auto;
 	height:100%;
 	gap:20px;
@@ -120,8 +119,8 @@ body{
 		min-height:200px;
 	}
 }
-@media (max-width:400px){
-	.logo{
+@media (max-width:500px){
+	header{
 		flex-direction:column;
 	}
 }
