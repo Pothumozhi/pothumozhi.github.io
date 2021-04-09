@@ -14,19 +14,6 @@ header{
 	text-align:center;
 	margin-left:10px;
 }
-.searchinput{
-	margin-left:30px;
-	margin-right:10px;
-	flex:1;
-	font-family:Manjari;
-	box-shadow:0 0 5px grey;
-	background:lightgray;
-	display:flex;
-	align-items:center;
-	height:20px;
-	border-radius:10px;
-	padding:10px;
-}
 
 ::placeholder{
 	color:gray;
@@ -34,13 +21,22 @@ header{
 	font-family:Manjari;
 }
 
-div input{
+#searchinput{
 	font-weight:bolder;
 	color:black;
 	border-width:0;
 	flex:1;
+	margin-left:20px;
 	background:transparent;
 	align-self:center;
+	background:lightgray;
+	height:20px;
+	padding:10px 20px 10px 20px;
+	border-radius:10px;
+}
+#searchinput:focus{
+	outline:none;
+	box-shadow:0 0 5px gray;
 }
 .contentcontainer{
 	display:flex;
@@ -104,18 +100,85 @@ body{
 	scrollbar-color:transparent transparent;
 }
 #alltranslations{
+	display:flex;
 	flex:1;
+	overflow-y:scroll;
+	flex-wrap:wrap;
 	flex-basis:200px;
+	padding:20px 20px 0 0;
 	align-self:strech;
-	background:blue;
 	color:transparent;
 	border-color:blue;
 	border-width:2px;
+	gap:10px;
+	padding:0;
+}
+
+.itemrect{
+	width:125px;
+	height:75px;
+	border:solid #6537f7;
+	border-width:1px;
+	border-radius:8px;
+	background:white;
+	align-items:center;
+	display:flex;
+	flex-direction:column;
+	cursor:pointer;
+	color:black;
+}
+.itemrect[selected=true]{
+	background:linear-gradient(to right bottom, #67baff,#5373ff);
+	color:white;
+	border-width:0px;
+}
+.itemrect:hover{
+	box-shadow:0 0 5px grey;
+}
+.itemnameen{
+	font-size:16px;
+	font-weight:bolder;
+	margin:8px 0 5px 0;
+	text-align:center;
+	max-width:110px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.itemnamell{
+	margin:0 0 8px 0;
+	font-size:12px;
+	font-weight:bolder;
+	text-align:center;
+	max-width:110px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.speakbutton{
+	background-image:linear-gradient(to right bottom, #5f72bd, #9b23ea);
+	width:75px;
+	height:16px;
+	padding:2px 4px 2px 4px;
+	border-width:0px;
+	align-items:center;
+	border-radius:8px;
+	color:white;
+	font-family:Manjari;
+	font-weight:bolder;
+	display:flex;
+	justify-content:center;
+	cursor:pointer;
+}
+.speakbutton:hover{
+	box-shadow:0 0 2px grey;
 }
 
 @media (max-width:800px){
 	.contentcontainer{
 		flex-direction:column;
+		height:initial;
+		overflow:visible;
 	}
 	.meaningrect{
 		min-width:0;
@@ -125,6 +188,7 @@ body{
 	#alltranslations{
 		align-self:initial;
 		height:100vh;
+		overflow-y:visible;
 	}
 	body{
 		display:initial;
