@@ -54,6 +54,9 @@ html, body{
 	width:100%;
 	font-family:Manjari;
 }
+html{
+	scroll-behavior:smooth;
+}
 body{
 	display:flex;
 	flex-flow:column;
@@ -245,3 +248,4 @@ ul#languageselector li:hover{
 		align-self:strech;
 	}
 }
+

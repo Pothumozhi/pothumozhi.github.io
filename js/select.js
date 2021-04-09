@@ -12,6 +12,7 @@ function selectMe(item){
 	engword.innerHTML = item.querySelector('p[class="itemnameen"]').innerHTML
 	meaning.innerHTML = item.querySelector('p[class="itemnamell"]').innerHTML
 	description.innerHTML = item.getAttribute("description")||"null"
+	document.documentElement.scrollTop = 0;
 }
 
 function selectLanguage(item){
