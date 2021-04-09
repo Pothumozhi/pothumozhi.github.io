@@ -231,6 +231,7 @@ ul#languageselector li:hover{
 	}
 	#meaningcontainer{
 		align-self:initial;
+		min-width:0;
 	}
 	body{
 		display:initial;
