@@ -13,6 +13,6 @@ function appendTranslations(){
 function appendChildren(request){
 	for(var i in request){
 		console.log(i)
-		alltranslations.insertAdjacentHTML("beforeend",'<div class="itemrect" selected="false">\n<p class="itemnameen" description="'+request[i]["description"]+'">'+i+'</p>\n<p class="itemnamell">'+request[i].translation+'</p>\n<button class="speakbutton" type="button">\nപറയൂ\n<img class="speakicon" src="src/speaker-disabled.svg" alt="ഹ" width="12" height="12">\n</button>\n</div>')
+		alltranslations.insertAdjacentHTML("beforeend",'<div class="itemadjuster">\n<div class="itemrect" selected="false" onclick=selectMe(this) description="'+request[i]["description"]+'">\n<p class="itemnameen">'+i+'</p>\n<p class="itemnamell">'+request[i].translation+'</p>\n<button class="speakbutton" type="button">\nപറയൂ\n<img class="speakicon" src="src/speaker-disabled.svg" alt="ഹ" width="12" height="12">\n</button>\n</div>\n</div>')
 	}
 }

@@ -3,13 +3,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<head>
 		<script src="js/initialize.js"></script>
-		<!--<script>
-		function appendthing(){
-			var itemstring = '<div class="itemrect" selected="true">\n<p class="itemnameen">Download</p>\n<p class="itemnamell">ഇറക്കിവയ്ക്കുക</p>\n<button class="speakbutton" type="button">\nപറയൂ\n<img class="speakicon" src="src/speaker-disabled.svg" alt="ഹ" width="12" height="12">\n</button>\n</div>'
-			var alltranslations = document.getElementById("alltranslations")
-			alltranslations.insertAdjacentHTML('beforeend', itemstring)
-		}-->
-		</script>
+		<script src="js/select.js"></script>
 		<title>പൊതുമൊഴി</title>
 		<link rel="stylesheet" href="css/styles.css">
 		<link rel="icon" href="src/NewLogo.png">
@@ -22,22 +16,20 @@
 			<input id="searchinput" placeholder="ഇവിടെ പരതൂ..."></input>
 		</header>
 		<div class="contentcontainer">
-			<div class="meaningrect">
-				<div id="contentrectangle">
-					<p class="englishword">English Word</p>
-					<p class="meaning">മലയാള പദം</p>
-					<p class="description">ഇന്ത്യയിൽ പ്രധാനമായും കേരള സംസ്ഥാനത്തിലും ലക്ഷദ്വീപിലും പുതുച്ചേരിയുടെ ഭാഗമായ മയ്യഴിയിലും സംസാരിക്കപ്പെടുന്ന ഭാഷയാണ് മലയാളം. ഇതു ദ്രാവിഡ ഭാഷാ കുടുംബത്തിൽപ്പെടുന്നു. ഇന്ത്യയിൽ ശ്രേഷ്ഠഭാഷാ പദവി ലഭിക്കുന്ന അഞ്ചാമത്തെ ഭാഷയാണ് മലയാളം[5]. 2013 മേയ് 23-നു ചേർന്ന കേന്ദ്രമന്ത്രിസഭായോഗമാണ് മലയാളത്തെ ശ്രേഷ്ഠഭാഷയായി അംഗീകരിച്ചത് ഇന്ത്യൻ ഭരണഘടനയിലെ എട്ടാം ഷെഡ്യൂളിൽ ഉൾപ്പെടുത്തിയിരിക്കുന്ന ഇന്ത്യയിലെ ഇരുപത്തിരണ്ട് ഔദ്യോഗിക ഭാഷകളിൽ ഒന്നാണ് മലയാളം[6].</p>
+			<div id="meaningcontainer">
+				<div class="meaningrect">
+					<div id="contentrectangle">
+						<p id="englishword">English Word</p>
+						<p id="meaning">മലയാള പദം</p>
+						<p id="description">ഇന്ത്യയിൽ പ്രധാനമായും കേരള സംസ്ഥാനത്തിലും ലക്ഷദ്വീപിലും പുതുച്ചേരിയുടെ ഭാഗമായ മയ്യഴിയിലും സംസാരിക്കപ്പെടുന്ന ഭാഷയാണ് മലയാളം. ഇതു ദ്രാവിഡ ഭാഷാ കുടുംബത്തിൽപ്പെടുന്നു. ഇന്ത്യയിൽ ശ്രേഷ്ഠഭാഷാ പദവി ലഭിക്കുന്ന അഞ്ചാമത്തെ ഭാഷയാണ് മലയാളം[5]. 2013 മേയ് 23-നു ചേർന്ന കേന്ദ്രമന്ത്രിസഭായോഗമാണ് മലയാളത്തെ ശ്രേഷ്ഠഭാഷയായി അംഗീകരിച്ചത് ഇന്ത്യൻ ഭരണഘടനയിലെ എട്ടാം ഷെഡ്യൂളിൽ ഉൾപ്പെടുത്തിയിരിക്കുന്ന ഇന്ത്യയിലെ ഇരുപത്തിരണ്ട് ഔദ്യോഗിക ഭാഷകളിൽ ഒന്നാണ് മലയാളം[6].</p>
+					</div>
 				</div>
+				<ul id="languageselector">
+					<li onclick="selectLanguage(this)"selected="true" itemnameen="Malayalam" description="ഇന്ത്യയിൽ പ്രധാനമായും കേരള സംസ്ഥാനത്തിലും ലക്ഷദ്വീപിലും പുതുച്ചേരിയുടെ ഭാഗമായ മയ്യഴിയിലും സംസാരിക്കപ്പെടുന്ന ഭാഷയാണ് മലയാളം. ഇതു ദ്രാവിഡ ഭാഷാ കുടുംബത്തിൽപ്പെടുന്നു. ഇന്ത്യയിൽ ശ്രേഷ്ഠഭാഷാ പദവി ലഭിക്കുന്ന അഞ്ചാമത്തെ ഭാഷയാണ് മലയാളം[5]. 2013 മേയ് 23-നു ചേർന്ന കേന്ദ്രമന്ത്രിസഭായോഗമാണ് മലയാളത്തെ ശ്രേഷ്ഠഭാഷയായി അംഗീകരിച്ചത് ഇന്ത്യൻ ഭരണഘടനയിലെ എട്ടാം ഷെഡ്യൂളിൽ ഉൾപ്പെടുത്തിയിരിക്കുന്ന ഇന്ത്യയിലെ ഇരുപത്തിരണ്ട് ഔദ്യോഗിക ഭാഷകളിൽ ഒന്നാണ് മലയാളം[6]." >മലയാളം</li>
+					<li onclick="selectLanguage(this)" selected="false" itemnameen="Tamil" description="தமிழ் மொழி (Tamil language) தமிழர்களினதும், தமிழ் பேசும் பலரதும் தாய்மொழி ஆகும். தமிழ் திராவிட மொழிக் குடும்பத்தின் முதன்மையான மொழிகளில் ஒன்றும் செம்மொழியும் ஆகும். இந்தியா, இலங்கை, மலேசியா, சிங்கப்பூர் ஆகிய நாடுகளில் அதிக அளவிலும், ஐக்கிய அரபு அமீரகம், தென்னாப்பிரிக்கா, மொரிசியசு, பிசி, இரீயூனியன், திரினிடாடு போன்ற நாடுகளில் சிறிய அளவிலும் தமிழ் பேசப்படுகிறது. 1997-ஆம் ஆண்டுப் புள்ளி விவரப்படி உலகம் முழுவதிலும் 8 கோடி (80 மில்லியன்) மக்களால் பேசப்படும் தமிழ்[13], ஒரு மொழியைத் தாய்மொழியாகக் கொண்டு பேசும் மக்களின் எண்ணிக்கை அடிப்படையில் பதினெட்டாவது இடத்தில் உள்ளது.">தமிழ்</li>
+				</ul>
 			</div>
 			<div id="alltranslations">
-				<div class="itemrect" selected="true">
-					<p class="itemnameen">Download</p>
-					<p class="itemnamell">ഇറക്കിവയ്ക്കുക</p>
-					<button class="speakbutton" type="button">
-						പറയൂ
-						<img class="speakicon" src="src/speaker-disabled.svg" alt="ഹ" width="12" height="12">
-					</button>
-				</div>
 			</div>
 		</div>
 	</body>
