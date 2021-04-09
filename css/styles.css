@@ -63,7 +63,6 @@ body{
 	box-shadow:0px 0px 5px gray;
 	padding:20px;
 	flex:1;
-	min-width:350px;
 	display:block;
 	overflow:auto;
 	border-radius:20px;
@@ -223,7 +222,6 @@ ul#languageselector li:hover{
 		gap:0;
 	}
 	.meaningrect{
-		flex-grow:2;
 		min-height:200px;
 	}
 	#alltranslations{
@@ -248,4 +246,3 @@ ul#languageselector li:hover{
 		align-self:strech;
 	}
 }
-
