@@ -10,15 +10,13 @@
 		<link rel="icon" href="src/NewLogo.png">
 	</head>
 	<body onload="appendTranslations()">
+		<div id="themeswitch" onclick="toggleDark()" ></div>
 		<div id="backgroundimg"></div>
 		<header>
 			<div class="logo">
 				പൊതുമൊഴി
 			</div>
-			<div id="searchcontainer">
-				<input oninput="filter(this.value)" id="searchinput" placeholder="ഇവിടെ പരതൂ...">	</input>
-				<div id="themeswitch" onclick="toggleDark()" ></div>
-			</div>
+			<input oninput="filter(this.value)" id="searchinput" placeholder="ഇവിടെ പരതൂ...">	</input>
 		</header>
 		<div class="contentcontainer">
 			<div id="meaningcontainer">
