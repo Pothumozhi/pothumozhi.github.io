@@ -2,7 +2,7 @@
 header{
 	display:flex;
 	flex-direction:row;
-	margin-top:0;
+	top:0;
 	align-items:center;
 	padding:10px;
 	flex:0 1 auto;
@@ -12,6 +12,9 @@ header{
 	font-weight:bolder;
 	text-align:center;
 	margin-left:10px;
+}
+.speakericon{
+	cursor:pointer;
 }
 
 ::placeholder{
@@ -26,10 +29,10 @@ header{
 	border-width:0;
 	flex:1;
 	margin-left:20px;
-	background:transparent;
 	align-self:center;
 	background:#e2e1e1;
 	height:20px;
+	font-family:Manjari;
 	padding:10px 20px 10px 20px;
 	border-radius:10px;
 }
@@ -81,11 +84,17 @@ body{
 	padding:0;
 	margin-bottom:0;
 }
+
 #meaning{
 	color:white;
 	font-size:36px;
 	font-weight:bolder;
 	margin:0;
+}
+#translationcontainer{
+	display:flex;
+	flex-direction:row;
+	align-items:center;
 }
 #description{
 	font-size:14px;
@@ -93,8 +102,8 @@ body{
 	line-height:1.5;
 	font-family:Manjari;
 	overflow-wrap:break-word;
+	overflow-y:scroll;
 	text-align:justify;
-	display:table-cell;
 	margin:0;
 	height:100px;
 	position:relative;
@@ -230,6 +239,9 @@ ul#languageselector li:hover{
 	}
 	#alltranslations{
 		overflow-y:visible;
+	}
+	#description{
+		display:table-cell;
 	}
 	#meaningcontainer{
 		align-self:initial;

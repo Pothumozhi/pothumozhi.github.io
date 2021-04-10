@@ -2,16 +2,17 @@
 <html>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<head>
-		<script src="js/initialize.js"></script>
-		<script src="js/select.js"></script>
+		<script type="text/javascript" src="js/select.js"></script>
+		<script type="text/javascript" src="js/initialize.js"></script>
+		<script type="text/javascript" src="js/tts.js"></script>
 		<title>പൊതുമൊഴി</title>
 		<link rel="stylesheet" href="css/styles.css">
 		<link rel="icon" href="src/NewLogo.png">
 	</head>
-	<body onload="appendTranslations()">
+	<body darkmode="true" onload="appendTranslations()">
 		<header>
 			<div class="logo">
-				പുതുമൊഴി
+				പൊതുമൊഴി
 			</div>
 			<input oninput="filter(this.value)" id="searchinput" placeholder="ഇവിടെ പരതൂ..."></input>
 		</header>
@@ -19,8 +20,11 @@
 			<div id="meaningcontainer">
 				<div class="meaningrect">
 					<div id="contentrectangle">
-						<p id="englishword">English Word</p>
-						<p id="meaning">മലയാള പദം</p>
+						<p id="englishword">Malayalam</p>
+						<div id="translationcontainer">
+							<p id="meaning">മലയാളം</p>
+							<img class="speakericon" src="src/speaker-disabled.svg" onclick="playAudio(this)" width=32px height=32px onmouseenter="changeAttribute(this, 'src', 'src/speaker-enabled.svg') " onmouseleave="changeAttribute(this, 'src', 'src/speaker-disabled.svg')">
+						</div>
 						<p id="description">ഇന്ത്യയിൽ പ്രധാനമായും കേരള സംസ്ഥാനത്തിലും ലക്ഷദ്വീപിലും പുതുച്ചേരിയുടെ ഭാഗമായ മയ്യഴിയിലും സംസാരിക്കപ്പെടുന്ന ഭാഷയാണ് മലയാളം. ഇതു ദ്രാവിഡ ഭാഷാ കുടുംബത്തിൽപ്പെടുന്നു. ഇന്ത്യയിൽ ശ്രേഷ്ഠഭാഷാ പദവി ലഭിക്കുന്ന അഞ്ചാമത്തെ ഭാഷയാണ് മലയാളം[5]. 2013 മേയ് 23-നു ചേർന്ന കേന്ദ്രമന്ത്രിസഭായോഗമാണ് മലയാളത്തെ ശ്രേഷ്ഠഭാഷയായി അംഗീകരിച്ചത് ഇന്ത്യൻ ഭരണഘടനയിലെ എട്ടാം ഷെഡ്യൂളിൽ ഉൾപ്പെടുത്തിയിരിക്കുന്ന ഇന്ത്യയിലെ ഇരുപത്തിരണ്ട് ഔദ്യോഗിക ഭാഷകളിൽ ഒന്നാണ് മലയാളം[6].</p>
 					</div>
 				</div>

@@ -17,6 +17,10 @@ function selectMe(item){
 	}
 }
 
+function sayHello(){
+	console.log('hello world')
+}
+
 function selectLanguage(item){
 	if(item!=previousLl){
 		item.setAttribute("selected","true");
