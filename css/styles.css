@@ -52,7 +52,9 @@ header{
 	flex:0 1 auto;
 }
 #themeswitch{
-	width:38px;
+	flex:1;
+	min-width:38px;
+	max-width:38px;
 	height:38px;
 	margin-left:10px;
 	border-radius:21px;
@@ -333,7 +335,7 @@ ul#languageselector li:hover{
 	}
 }
 @media (max-width:500px){
-	.searchinput{
+	#searchinput{
 		align-self:strech;
 	}
 }
