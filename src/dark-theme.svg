@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="74.988701mm"
+   height="74.987152mm"
+   viewBox="0 0 74.988701 74.987152"
+   version="1.1"
+   id="svg4645"
+   inkscape:version="1.1-alpha (65d249f, 2021-01-17)"
+   sodipodi:docname="dark-theme.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview4647"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     objecttolerance="10.0"
+     gridtolerance="10.0"
+     guidetolerance="10.0"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.92114197"
+     inkscape:cx="162.29854"
+     inkscape:cy="166.09817"
+     inkscape:window-width="1366"
+     inkscape:window-height="691"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-page="true" />
+  <defs
+     id="defs4642">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5904"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5898"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5892"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5699"
+       is_visible="true"
+       lpeversion="1" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-56.938168,-113.22426)">
+    <path
+       id="path7185"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.77743;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.0755906"
+       d="m 91.594012,124.83761 a 26.03442,26.033882 0 0 0 -23.618499,25.90777 26.03442,26.033882 0 0 0 26.034423,26.03406 26.03442,26.033882 0 0 0 24.114384,-16.24657 22.273676,22.273214 0 0 1 -14.02908,4.99223 22.273676,22.273214 0 0 1 -22.273645,-22.27328 22.273676,22.273214 0 0 1 9.772417,-18.41421 z" />
+  </g>
+</svg>

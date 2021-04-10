@@ -36,3 +36,6 @@ function appendChildren(request){
 	selectMe(alltranslations.children[0].children[0])
     selectLanguage(document.querySelector('li'))
 }
+function toggleDark(){
+	document.children[0].setAttribute('darkmode',!(document.children[0].getAttribute("darkmode")=="true"))
+}
