@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html darkmode="true">
+<html darkmode="false">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<head>
 		<script type="text/javascript" src="js/select.js"></script>
@@ -15,8 +15,10 @@
 			<div class="logo">
 				പൊതുമൊഴി
 			</div>
-			<input oninput="filter(this.value)" id="searchinput" placeholder="ഇവിടെ പരതൂ...">	</input>
-			<div id="themeswitch" onclick="toggleDark()" ></div>
+			<div id="searchcontainer">
+				<input oninput="filter(this.value)" id="searchinput" placeholder="ഇവിടെ പരതൂ...">	</input>
+				<div id="themeswitch" onclick="toggleDark()" ></div>
+			</div>
 		</header>
 		<div class="contentcontainer">
 			<div id="meaningcontainer">

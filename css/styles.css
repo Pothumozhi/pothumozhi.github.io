@@ -72,7 +72,7 @@ header{
 	scrollbar-width:none;
 }
 .logo{
-	flex:1;
+	align-self:center;
 	font-size:30px;
 	font-weight:bolder;
 	text-align:center;
@@ -101,6 +101,12 @@ header{
 	font-family:Manjari;
 	padding:10px 20px 10px 20px;
 	border-radius:10px;
+}
+#searchcontainer{
+	flex:1;
+	display:flex;
+	flex-flow:row;
+	align-items:center;
 }
 #searchinput:focus{
 	outline:none;
@@ -254,7 +260,7 @@ header{
 	justify-content:space-between;
 }
 #recoto{
-	background:#6537f7;
+	background:grey/*#6537f7*/;
 	width:70px;
 	font-weight:bolder;
 	height:30px;
@@ -305,6 +311,9 @@ ul#languageselector li:hover{
 	}
 	.meaningrect{
 		min-height:200px;
+	}
+	.logo{
+		flex:1;
 	}
 	#alltranslations{
 		overflow-y:visible;
