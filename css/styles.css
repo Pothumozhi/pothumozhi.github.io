@@ -10,7 +10,8 @@
 	--themeicon:url(../src/light-theme.svg);
 	background:var(--body-background);
 }
-@media (prefers-color-scheme: dark), :root[darkmode=true]{
+
+@media (prefers-color-scheme: dark){
 	--search-background:#2d333b;
 	--item-background:#22272e;
 	--body-background:#0d1117;
@@ -20,6 +21,18 @@
 	--item-border:transparent;
 	--place-holder:lightgrey;
 }
+
+:root[darkmode=true]{
+	--search-background:#2d333b;
+	--item-background:#22272e;
+	--body-background:#0d1117;
+	--item-font:white;
+	--shadow:#6537f7;
+	--themeicon:url(../src/dark-theme.svg);
+	--item-border:transparent;
+	--place-holder:lightgrey;
+}
+
 html, body{
 	margin:0;
 	height:100%;
