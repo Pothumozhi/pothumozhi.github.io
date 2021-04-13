@@ -10,7 +10,7 @@
 	--themeicon:url(../src/light-theme.svg);
 	background:var(--body-background);
 }
-@media (prefers-color-scheme: dark){
+@media (prefers-color-scheme: dark), root[darkmode=true]{
 	--search-background:#2d333b;
 	--item-background:#22272e;
 	--body-background:#0d1117;
