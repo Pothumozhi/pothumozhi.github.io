@@ -5,6 +5,7 @@
 	--body-background:white;
 	--item-font:black;
 	--shadow:grey;
+	--form-font:#6537f7;
 	--item-border:#6537f7;
 	--place-holder:grey;
 	--themeicon:url(../src/light-theme.svg);
@@ -15,6 +16,7 @@
 	--search-background:#2d333b;
 	--item-background:#22272e;
 	--body-background:#0d1117;
+	--form-font:white;
 	--item-font:white;
 	--shadow:#6537f7;
 	--themeicon:url(../src/dark-theme.svg);
@@ -26,13 +28,13 @@
 	--search-background:#2d333b;
 	--item-background:#22272e;
 	--body-background:#0d1117;
+	--form-font:white;
 	--item-font:white;
 	--shadow:#6537f7;
 	--themeicon:url(../src/dark-theme.svg);
 	--item-border:transparent;
 	--place-holder:lightgrey;
 }
-
 html, body{
 	margin:0;
 	height:100%;
@@ -56,29 +58,38 @@ body{
 	z-index:-1;
 }
 header{
-	flex-wrap:wrap;
 	display:flex;
 	flex-direction:row;
 	top:0;
+	gap:10px;
 	align-items:center;
 	padding:10px;
 	flex:0 1 auto;
 }
-#themeswitch{
+.roundbuttons{
+	z-index:10;
 	width:38px;
 	height:38px;
-	margin-left:10px;
-	border-radius:21px;
-	background-color:var(--item-background);
-	border:1px solid var(--item-border);
-	background-image:var(--themeicon);
-	background-size:contain;
+	border-radius:24px;
 	cursor:pointer;
 	position:fixed;
+}
+#suggestedit{
+	left:12px;
+	bottom:55px;
+	background-color: #6e72fc;
+	background-image:url(../src/create.svg);
+}
+#themeswitch{
+	border-radius:21px;
+	background-color:var(--item-background);
+	background-image:var(--themeicon);
+	background-size:contain;
 	bottom:10px;
 	left:10px;
+	border:1px solid var(--item-border);
 }
-#themeswitch:hover{
+.roundbuttons:hover{
 	box-shadow:0 0 5px var(--shadow);
 }
 #uldiv{
@@ -110,14 +121,14 @@ header{
 	color:var(--item-font);
 	border-width:0;
 	flex:1;
-	margin-left:20px;
 	align-self:center;
 	background:var(--search-background);
-	height:20px;
+	height:10px;
 	font-family:Manjari;
 	padding:10px 20px 10px 20px;
 	border-radius:10px;
 }
+
 #searchinput:focus{
 	outline:none;
 	box-shadow:0 0 5px var(--shadow);
@@ -215,6 +226,7 @@ header{
 .itemrect:hover{
 	box-shadow:0 0 5px var(--shadow);
 }
+
 .itemnameen{
 	font-size:16px;
 	padding:0 2px 0 2px;
@@ -236,6 +248,30 @@ header{
 	overflow:hidden;
 	white-space:nowrap;
 	text-overflow:ellipsis;
+}
+.wordtype{
+	width:20px;
+	height:20px;
+	border-radius:10px;
+	background:transparent;
+	position:relative;
+	top:60px;
+	color:white;
+	font-weight:bolder;
+	font-size:12px;
+	text-align:center;
+	vertical-align:middle;
+	line-height:20px;
+	left:110px;
+	align-self:flex-start;
+}
+.wordtype[wordtype=ക്രി]{
+	background-color:#ee9617;
+	background-image:linear-gradient(315deg, #ee9617 0%, #fe5858 74%);
+}
+.wordtype[wordtype=നാ]{
+	background-color: #7f53ac;
+	background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
 }
 .speakbutton{
 	background-image:linear-gradient(to right bottom, #5f72bd, #9b23ea);
@@ -286,6 +322,15 @@ header{
 	display:flex;
 	flex-direction:column;
 }
+#symbolinfo{
+	line-height:2;
+	color:white;
+	font-weight:bolder;
+	align-self:flex-start;
+	overflow:wrap;
+	float:right;
+	word-spacing:30px;
+}
 #languageselector{
 	margin:15px 0 15px 0;
 	padding:0;
@@ -314,7 +359,120 @@ ul#languageselector li:hover{
 	box-shadow:0 0 5px var(--shadow);
 }
 
+/* -- suggestionbox section starts -- */
+
+#overlay1{
+	z-index:11;
+	width:100vw;
+	height:100vh;
+	font-family:Manjari;
+	background:lightgrey;
+}
+
+.totalcontainer{
+	display:flex;
+	flex-flow:column;
+}
+
+.totalcontainer.nullerror{
+	--hovercolor:#ff0033;
+	color:#ff0033;
+	--shadow:red;
+}
+
+.collector{
+	font-family:Manjari;
+	outline:none;
+	color:var(--item-font);
+	padding:8px 10px;
+	border-radius:10px;
+	background:var(--search-background);
+	border:1px solid var(--hovercolor,transparent);
+}
+
+.collector:focus{
+	border-width:1px;
+	box-shadow:0 0 3px var(--shadow);
+	border-color: var(--hovercolor,#7f53ac);
+}
+
+#suggestionform{
+	margin-top:10px;
+}
+
+input[type="radio"]{
+	cursor:pointer;
+}
+
+#submitbuttoncontainer button{
+	border:none;
+	outline:none;
+	padding:10px 20px;
+	border-radius:10px;
+	margin-right:10px;
+	font-family:Manjari;
+	cursor:pointer;
+	font-weight:bold;
+	color:white;
+}
+
+#submitbuttoncontainer button:hover{
+	box-shadow:0 0 3px var(--shadow);
+}
+
+#submit{
+	background-color: #7f53ac;
+	background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+}
+
+#submit:disabled{
+	background:gray;
+	box-shadow:none;
+	cursor:auto;
+	--shadow:transparent;
+}
+
+#cancel{
+	background-color: #fc9842;
+	background-image: linear-gradient(315deg, #fc9842 0%, #fe5f75 74%);
+}
+
+#suggestionbox{
+	height:auto;
+	position:fixed;
+	left:50%;
+	bottom:50%;
+	transform:translate(-50%,50%);
+	font-weight:bold;
+	display:flex;
+	flex-flow:row;
+	border-radius:12px;
+	flex-direction:row;
+	color:var(--form-font);
+	background:var(--body-background);
+	overflow:hidden;
+	box-shadow:0 0 10px var(--shadow);
+	justify-self:center;
+}
+
+#designcontainer{
+	box-shadow:0 0 5px grey;
+	display:flex;
+	background-color: #7f53ac;
+	background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+	min-width:200px;
+	flex:2;
+}
+#formcontainer{
+	margin:20px;
+	display:inline-table;
+	flex:2;
+}
+/* section for responsive designing */
 @media (max-width:800px){
+	#designcontainer{
+		min-width:100px;
+	}
 	.contentcontainer{
 		flex-direction:column;
 		height:initial;
@@ -322,9 +480,6 @@ ul#languageselector li:hover{
 	}
 	.meaningrect{
 		min-height:200px;
-	}
-	.logo{
-		flex:1;
 	}
 	#alltranslations{
 		overflow-y:visible;
@@ -346,5 +501,23 @@ ul#languageselector li:hover{
 @media (max-width:500px){
 	#searchinput{
 		align-self:strech;
+		margin-left:0;
+	}
+	#designcontainer{
+		min-width:0;
+		width:0;
+		max-width:0;
+	}
+	#suggestionbox{
+		transform:translate(-50%,0);
+		bottom:0;
+		width:100%;
+		border-radius:12px 12px 0 0;
+	}
+	header{
+		flex-direction:column;
+	}
+	.totalcontainer{
+		flex:1;
 	}
 }

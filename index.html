@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html darkmode="false">
+<html darkmode="getCookie('darktheme')">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+		<script type="text/javascript" src="js/firebase.js"></script>
 		<script type="text/javascript" src="js/select.js"></script>
 		<script type="text/javascript" src="js/initialize.js"></script>
+		<script type="application/javascript" src="js/model.js"></script>
 		<script type="text/javascript" src="js/tts.js"></script>
 		<title>പൊതുമൊഴി</title>
 		<link rel="stylesheet" href="css/styles.css">
 		<link rel="icon" href="src/NewLogo.png">
 	</head>
 	<body onload="appendTranslations()">
-		<div id="themeswitch" onclick="toggleDark()" ></div>
+		<div id="themeswitch" class="roundbuttons" onclick="toggleDark()" ></div>
+		<div id="suggestedit" class="roundbuttons" onclick="showSuggestion()"></div>
 		<div id="backgroundimg"></div>
 		<header>
 			<div class="logo">
@@ -21,6 +27,8 @@
 		<div class="contentcontainer">
 			<div id="meaningcontainer">
 				<div class="meaningrect">
+					<p id="symbolinfo">❗️തീര്‍ച്ചപ്പെടുത്താത്തത്  🏴󠁧󠁢󠁥󠁮󠁧󠁿️ഇംഗ്ലീഷ്  
+🌟️പുതിയവ</p>
 					<div id="contentrectangle">
 						<p id="englishword">Malayalam</p>
 						<div id="translationcontainer">
@@ -45,6 +53,35 @@
 				</div>
 			</div>
 			<div id="alltranslations">
+			</div>
+		</div>
+		<div role="dialog" style="position:fixed;top:0;left:0;background-color:rgba(0,0,0,.3);display:none;" id="overlay1" width="100%" height="100%">
+			<div id="suggestionbox">‍
+				<div id="designcontainer">
+					<div style="flex:1;background-size:contain;background-image:url(src/background-dark.svg)"></div>
+				</div>
+				<div id="formcontainer">
+					<div class="totalcontainer">
+						<p>ഇംഗ്ലീഷ് വാക്ക്</p>
+						<input class="collector" oninput="fieldChecker(this)" placeholder="ഉദാ:english" id="wordsuggestion"></input>
+					</div>
+					<div class="totalcontainer">
+						<p>മലയാള പരിഭാഷ</p>
+						<input class="collector" oninput="fieldChecker(this)" placeholder="ഉദാ:ആംഗലേയം" id="translationsuggestion"></input>
+					</div>
+					<div class="totalcontainer">
+						<p>വിവരണം</p>
+						<input class="collector" oninput="fieldChecker(this)" placeholder="ഉദാ:പാശ്ചാത്യ രാജ്യമായ ഇംഗ്ലണ്ടില്‍ ഉടലെടുത്ത ഭാഷ." id="descriptionsuggestion"></input>
+					</div>
+					<form id="suggestionform">
+						<input id="verb" onchecked="document.getElementById('suggestionform').setAttribute('value','ക്രി')" name="type" type="radio" value="ക്രി">ക്രിയ</input>
+						<input onchecked="document.getElementById('suggestionform').setAttribute('value','നാ')" id="noun"name="type" type="radio" checked="true" value="നാ">നാമം</input>
+					</form>
+					<div id="submitbuttoncontainer" style="float:right;margin-top:20px">
+						<button id="cancel" onclick="closeSuggestion()">റദ്ദാക്കൂ</button>
+						<button id="submit" onclick="suggestNew(uploadToCloud())" disabled>അയക്കൂ</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>
