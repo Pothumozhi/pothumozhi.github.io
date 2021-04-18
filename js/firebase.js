@@ -40,7 +40,7 @@ function suggestNew(object){
 		console.error("LanguageErrorNo:02::| Not English")
 		return false;
 	}
-	var docname = convertToValid(object.englishword).toLowerCase()+object.translation+object.type
+	var docname = convertToValid(object.englishword).toLowerCase()+convertToValid(object.translation)+object.type
 	checkDocExists(docname).then(function(value){
 		console.log(value)
 		if(value){
