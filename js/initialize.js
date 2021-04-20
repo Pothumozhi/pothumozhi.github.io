@@ -22,7 +22,7 @@ function filter(text){
 	for(var item in jsonParsed){
 		for(var word of words){
 			if(item.toLowerCase().includes(word.toLowerCase())||jsonParsed[item].translation.toLowerCase().includes(word.toLowerCase())){
-				alltranslations.insertAdjacentHTML("beforeend",'<div class="itemadjuster">\n<div class="itemrect" selected="false" onclick=selectMe(this) description="'+jsonParsed[item]["description"]+'">\n<p class="itemnameen">'+item+'<div class="wordtype"></div></p>\n<p class="itemnamell">'+jsonParsed[item].translation+'</p>\n<button class="speakbutton" type="button">\nപറയൂ\n<img class="speakicon" src="src/speaker-disabled.svg" alt="ഹ" width="12" height="12">\n</button>\n</div>\n</div>')
+				addChild(item,jsonParsed[item].translation,jsonParsed[item].wordtype,jsonParsed[item]["description"])
 			}
 		}
 	}
@@ -34,10 +34,13 @@ function changeAttribute(item,attribute,value){
 function appendChildren(request){
 	for(var i in request){
 		var wordtype = request[i].wordtype||""
-		alltranslations.insertAdjacentHTML("beforeend",'<div class="itemadjuster">\n<div class="itemrect" selected="false" onclick=selectMe(this) description="'+request[i]["description"]+'">\n<div style="align-self:flex-start;height:0;"><div class="wordtype" wordtype='+wordtype+'>'+wordtype+'</div></div>\n<p class="itemnameen">'+i+'</p>\n<p class="itemnamell">'+request[i].translation+'</p>\n<button class="speakbutton" type="button">\nപറയൂ\n<img class="speakicon" src="src/speaker-disabled.svg" alt="ഹ" width="12" height="12">\n</button>\n</div>\n</div>')
+		addChild(i,request[i].translation,request[i].wordtype,reqeust[i]["description"])
 	}
 	selectMe(alltranslations.children[0].children[0])
     selectLanguage(document.querySelector('li'))
+}
+function addChild(englishword,translation,wordtype,description){
+	alltranslations.insertAdjacentHTML("beforeend",'<div class="itemadjuster">\n<div class="itemrect" selected="false" onclick=selectMe(this) description="'+description+'">\n<div style="align-self:flex-start;height:0;"><div class="wordtype" wordtype='+wordtype+'>'+wordtype+'</div></div>\n<p class="itemnameen">'+englishword+'</p>\n<p class="itemnamell">'+translation+'</p>\n<button class="speakbutton" type="button">\nപറയൂ\n<img class="speakicon" src="src/speaker-disabled.svg" alt="ഹ" width="12" height="12">\n</button>\n</div>\n</div>')
 }
 function toggleDark(){
 	var toggleTo = !(document.children[0].getAttribute("darkmode")=="true");
