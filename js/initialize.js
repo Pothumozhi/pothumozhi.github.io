@@ -34,7 +34,7 @@ function changeAttribute(item,attribute,value){
 function appendChildren(request){
 	for(var i in request){
 		var wordtype = request[i].wordtype||""
-		addChild(i,request[i].translation,request[i].wordtype,reqeust[i]["description"])
+		addChild(i,request[i].translation,request[i].wordtype,request[i]["description"])
 	}
 	selectMe(alltranslations.children[0].children[0])
     selectLanguage(document.querySelector('li'))
