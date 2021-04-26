@@ -48,7 +48,7 @@ function toggleDark(){
 	setCookie("darktheme",document.children[0].getAttribute("darkmode"))
 }
 function setCookie(cookieName, value){
-	document.cookie = cookieName+"="+value+";SameSite=None;Secure"
+	document.cookie = cookieName+"="+value+";SameSite=None;Secure;"
 }
 function getCookie(cookieName){
   var name = cookieName +"="
